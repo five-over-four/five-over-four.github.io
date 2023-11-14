@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shoreline.</title>
+    <link href="./style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/x-icon" href="/media_files/images/favicon.ico">
+</head>
+
+<body>
+
+    <audio loop id="play-music" src="./shoreline/sounds/shoreline_single_octave.mp3"></audio>
+    <style>
+        body{
+            background-image: url(./shoreline/images/bg_tile_symmetry.png);
+            animation: flow-bg 10s ease-in-out infinite;
+        }
+        
+        @keyframes flow-bg {
+            0% { background-position: 0px 0; }
+            50% { background-position: 1020px 100px; }
+            100% { background-position: 0px 0; }
+        }
+    </style>
+
+    <div class="contents" id="main-container">
+        <img src="./shoreline/images/open.png" id="main-image">
+        <div class="text">
+
+        <p color="#0C255A" prompt="Begin." icon="open.png"></p>
+
+        <p prompt="Take in the view." icon="shore_tile.png">
+        A chill breeze welcomes you to the shoreline.
+        </p>
+
+        <p prompt="Wait.">
+        < WIP. MORE LATER. >
+        </p>
+
+        </div>
+        <button class="styled-button" id="main-button"></button>
+    </div>
+    
+    <script src="/scripts/storyteller.js"></script>
+    <div id="last-update">Last update: November 11th 2023</div>
+
+</body>
+</html>

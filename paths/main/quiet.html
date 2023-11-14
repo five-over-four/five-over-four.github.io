@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiet.</title>
+    <link href="./style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/x-icon" href="/media_files/images/favicon.ico">
+</head>
+
+<body>
+
+    <audio loop id="play-music" src="./quiet/sounds/quiet_1.mp3"></audio>
+    <style>
+        body {
+            background-image: url(./quiet/images/teal_tile.png);
+            animation: flow-bg 10s linear infinite;
+        }
+        
+        @keyframes flow-bg {
+            100% { background-position: 512px 256px }
+        }
+    </style>
+
+    <div class="contents" id="main-container">
+        <img src="./quiet/images/open.png" id="main-image">
+        <div class="text">
+
+        <p prompt="Begin." icon="open.png" color="#012f33"></p>
+
+        <p prompt="Look around.">
+        Floating in an endless ocean,
+        you awaken to a sense of unreality.
+        You feel your way through the stillness.
+        A dark fog permeates the air around you.
+        </p>
+
+        <p prompt="Approach the wall.">
+        You look around in the dreamlike haze,
+        for shape and structure. A wall. A room. A door.
+        A window with the curtains drawn.
+        </p>
+
+        <p prompt="Look outside.">
+        You make your way to the wall and pause for a moment.
+        </p>
+
+        <p prompt="This feels wrong." prompt2="Step outside.">
+        Out of the window, a serene, empty void.
+        Out the door, a freezing comfort.
+        </p>
+
+        <p id="branch2" prompt="...">
+        The air feels painfully cold.
+        It's as if the world ends beyond the threshold.
+        </p>
+
+        <p prompt="Go back.">
+        There's nothing for you, there.
+        There's nothing <i>there</i>.
+        </p>
+
+        <p id="branch1" prompt="Yawn.">
+        You resist the curiosity and
+        close the door.
+        </p>
+
+        <p prompt="Sleep.">
+        Back inside the room, fatigue overwhelms you.
+        </p>
+
+        <p icon="closed.png" prompt="Wake up.">
+        ...
+        </p>
+
+        <p icon="open.png" prompt="It's too dark.">
+        You find yourself, once again, awake.
+        Still, the senses blur and the lights feel dim.
+        Dimmer than one would think possible.
+        </p>
+
+        <p prompt="Find more lights." prompt2="Explore the dark.">
+        A couple bulbs illuminate part of the walls.
+        You fail to make out any details of the space.
+        </p>
+
+        <p id="branch1" prompt="What's this...?">
+        Regardless of how ambiguous the space,
+        you're still able to just trace your hand on the wall
+        and-
+        </p>
+
+        <p id="branch1" effect="lid_close.mp3" prompt="Crouch down to the light.">
+        A switch on the wall. Flick it.
+        A small light on the floor turns on.
+        </p>
+        
+        <p id="branch1" prompt="&quotFine. I'll look around some more.&quot">
+        Next to the light, a metal hatch in the floor.
+        On the hatch, a lever.
+        Next to the lever, a lock.
+        You get the picture.
+        </p>
+
+        <p id="branch2" prompt="Keep walking.">
+        It is frustratingly dark.
+        You feel so tired.
+        </p>
+
+        <p id="branch2" prompt="Feel it.">
+        You bump into something.
+        That something...
+        </p>
+
+        <p id="branch2" prompt="Feel it more.">
+        Solid metal.
+        </p>
+
+        <p prompt="Wait.">
+        < WIP, MORE LATER >
+        </p>
+
+        </div>
+        <button class="styled-button" id="main-button"></button>
+    </div>
+
+    <script src="/scripts/storyteller.js"></script>
+    <div id="last-update">Last update: November 10th 2023</div>
+
+</body>
+</html>

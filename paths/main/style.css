@@ -1,0 +1,89 @@
+html {
+	margin:0;
+	height:100%;
+}
+
+body {
+	margin:0;
+	width: 100%;
+	height: 100%;
+	display: table;
+}
+
+.contents {
+	max-width: 700px;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	text-align: center;
+	margin: 4em auto 0;
+	background-color: rgba(0, 0, 0, 1);
+	border: 2px solid;
+	position: relative;
+}
+
+.text {
+	color: white;
+	max-width: 65%;
+	text-align: left;
+	margin: auto;
+	line-height: 1.7;
+	font-family: Courier;
+	font-size: 13pt;
+}
+
+.styled-button {
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	font-size: 12pt;
+	font-family: Courier;
+	margin-top: 3pt;
+	margin-left: 2em;
+	margin-right: 2em;
+}
+
+.cookie-button {
+	border: none;
+	color: white;
+	padding: 5px 10px;
+	text-align: center;
+	font-size: 12pt;
+	font-family: Courier;
+}
+
+#save-button {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#load-button {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+button { font-weight: bold;}
+button:hover { background-color: rgb(120, 6, 6) !important; }
+
+#last-update {
+    position: absolute;
+    background-color: black;
+    color: white;
+    font-family: Courier;
+    font-size: 12pt;
+    padding: 1pt 1em 1pt 1em;
+    left: 0;
+    top: 0;
+}
+
+.hidden { display: none; }
+
+a:visited, a:active, a:link {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+a:hover {
+	color: #FF0000;
+}

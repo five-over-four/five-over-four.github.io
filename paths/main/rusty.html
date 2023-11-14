@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rusty.</title>
+    <link href="./style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/x-icon" href="/media_files/images/favicon.ico">
+</head>
+
+<body>
+
+    <audio loop id="play-music" src="./rusty/sounds/warning.mp3"></audio>
+    <style>
+        body{
+            background-image: url(./rusty/images/pipes.png);
+            animation: flow-bg 5s linear infinite;
+        }
+        
+        @keyframes flow-bg {
+            100% { background-position: -228px 486px }
+        }
+    </style>
+
+    <div class="contents" id="main-container">
+        <img src="./quiet/images/open.png" id="main-image">
+        <div class="text">
+
+        <p color="#460808" prompt="Begin." icon="open.png"></p>
+
+        <p prompt="&quotDon't-&quot" prompt2="&quotWhat...?&quot" icon="bug.png">
+        It's hot. It's too hot.
+        You feel disoriented.
+        Something's terribly wrong.
+        </p>
+
+        <p prompt="Wait.">
+        < WIP. MORE LATER. >
+        </p>
+
+        </div>
+        <button class="styled-button" id="main-button"></button>
+    </div>
+
+    <script src="/scripts/storyteller.js"></script>
+    <div id="last-update">Last update: November 11th 2023</div>
+
+</body>
+</html>
