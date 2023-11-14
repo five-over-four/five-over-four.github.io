@@ -7,7 +7,6 @@ var started = false;
 
 document.addEventListener("keydown", controlHandler);
 button.addEventListener('click', goForward('branch1'), false);
-paras.forEach(item => item.classList.add('hidden'));
 
 // generate save and load buttons for mobile users (and desktop).
 container = "main-container";
@@ -35,7 +34,7 @@ else {
 
 selfRedirect = 0;
 document.cookie = "self-redirect=0;sameSite=Strict;Path=/";
-paras[index].classList.remove("hidden");
+paras[index].style.display = 'block';
 updateValues(index); // get initial setup (color and button prompt etc.)
 
 function makeButton(insideText, id, parent, func, className) {
@@ -66,7 +65,7 @@ function goForward(branchToTake) { // todo: do not read prompt two if branching.
 
       if (!started) {
         document.getElementById('play-music').play();
-        document.getElementById("last-update").classList.add("hidden");
+        document.getElementById('last-update').style.display = 'none';
         started = true;
       }
 
@@ -78,7 +77,7 @@ function goForward(branchToTake) { // todo: do not read prompt two if branching.
         currentlyHandlingChoice = true;
       }
 
-      paras[index].classList.add('hidden');
+      paras[index].style.display = 'none';
 
       // loop until new choice, always skipping the currently not chosen
       // branch, choices.at(-1). break when finding non-wrong branch items.
@@ -87,7 +86,7 @@ function goForward(branchToTake) { // todo: do not read prompt two if branching.
         index++;
         if (!onCorrectBranch(index)) continue;
         else {
-          paras[index].classList.remove("hidden");
+          paras[index].style.display = 'block';
           indicesVisited.push(index);
           updateValues(index);
           currentlyHandlingChoice = false;
@@ -104,15 +103,15 @@ function goBack() {
   if (index == 0) return;
   if (!started) {
     document.getElementById('play-music').play();
-    document.getElementById("last-update").classList.add("hidden");
+    document.getElementById("last-update").style.display = 'none';
     started = true;
   }
 
-  paras[index].classList.add('hidden');
+  paras[index].style.display = 'none';
   previousIndex = indicesVisited.at(-1);
   indicesVisited = indicesVisited.slice(0,-1);
   index = indicesVisited.at(-1);
-  paras[index].classList.remove('hidden');
+  paras[index].style.display = 'block';
 
   if (paras[previousIndex].hasAttribute("prompt2")) {
     choices.pop();
