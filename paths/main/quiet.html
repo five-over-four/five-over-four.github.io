@@ -88,25 +88,30 @@
         and-
         </p>
 
-        <p id="branch1" effect="lid_close.mp3" prompt="Crouch down to the light.">
+        <p id="branch1" prompt="Crouch down to the light." effect="lightswitch.mp3">
         A switch on the wall. Flick it.
         A small light on the floor turns on.
         </p>
         
-        <p id="branch1" prompt="&quotFine. I'll look around some more.&quot">
+        <p id="branch1" prompt="Get up.">
         Next to the light, a metal hatch in the floor.
-        On the hatch, a lever.
-        Next to the lever, a lock.
-        You get the picture.
+        On the hatch, a handle.
+        Next to the handle, a lock.
+        You try pulling, but it doesn't open.
+        </p>
+
+        <p id="branch1" prompt="Walk in the direction of the sound." icon="side.png" effect="kick_muted.mp3">
+        As you get up, you hear a sound like a
+        metallic impact, somewhere.
         </p>
 
         <p id="branch2" prompt="Keep walking.">
-        It is frustratingly dark.
-        You feel so tired.
+        It is frustratingly dark. Despite sleeping,
+        you don't feel any more awake than before.
         </p>
 
-        <p id="branch2" prompt="Feel it.">
-        You bump into something.
+        <p id="branch2" prompt="Feel it." effect="kick.mp3">
+        You hit your foot on something.
         That something...
         </p>
 
@@ -114,8 +119,59 @@
         Solid metal.
         </p>
 
-        <p prompt="Wait.">
-        < WIP, MORE LATER >
+        <p id="branch2" prompt="Get up.">
+        A handle? A hatch, you suppose.
+        A raised bit with a hole- a lock.
+        The hatch doesn't budge as you pull on the handle.
+        </p>
+
+        <p id="branch2" prompt="Walk toward the light." icon="side.png" effect="lightswitch_muted.mp3">
+        As you get up, you hear a sound like a
+        a switch being flipped, somewhere. A dim
+        light can be seen in the distance.
+        </p>
+
+        <p prompt="Focus." icon="open.png">
+        On the way, you catch a passing thought-
+        How did you even get here? Where <i>is</i> here?
+        Everything seems so formless and foreign. 
+        Forget about a key- was there ever even
+        a lock?
+        </p>
+
+        <p prompt="Pinch your arm for good measure." icon="blinking.gif">
+        You squeeze your eyes closed hard and open them
+        a few times.
+        </p>
+
+        <p prompt="Keep moving. Don't stagnate." icon="open.png">
+        The most normal sensation so far.
+        You might spend an eternity just
+        standing around wherever you are,
+        in this barely waking dream.
+        Keep moving, don't stagnate.
+        </p>
+
+        <p prompt="Look for the door and window again.">
+        Some time passes. The senses blur, as
+        does any sense of progress-
+        you feel like you're <i>literally</i>
+        going nowhere.
+        </p>
+
+        <p prompt="...Whistle into the dark?">
+        &quot;Looking&quot; may be a generous expression.
+        You have other senses, surely?
+        </p>
+
+        <p prompt="This is stupid." effect="whistle.mp3">
+        The sound echoes. Alas, lacking the finer points
+        of being a bat, you're little more informed, save for
+        the musical enrichment- C minor, you believe.
+        </p>
+
+        <p prompt="Wait impatiently.">
+        < MOST RECENT POINT REACHED. >
         </p>
 
         </div>
@@ -123,7 +179,7 @@
     </div>
 
     <script src="/scripts/storyteller.js"></script>
-    <div id="last-update">Last update: November 10th 2023</div>
+    <div id="last-update">Last update: November 14th 2023</div>
 
 </body>
 </html>

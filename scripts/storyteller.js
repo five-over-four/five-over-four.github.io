@@ -190,7 +190,7 @@ function updateValues(atIndex, whichAttributes=null) {
         document.getElementById("load-button").style.backgroundColor = value;
         break;
       case "link":
-        window.location.href = pathRoot.replace(pagename, value); // .html remove when posting.
+        window.location.href = pathRoot.replace(pagename, value); // remove .html when publishing.
     }
   }
 }
@@ -298,5 +298,6 @@ function loadSave() {
   var cookies = document.cookie.split(";");
   const pagenameIndex = cookies.findIndex(e => e.includes("pagename"));
   const nextPagename = cookies[pagenameIndex].split("=")[1];
-  window.location.href = pathRoot.replace(pagename, nextPagename); // .html
+  window.location.href = pathRoot.replace(pagename, nextPagename); // remove .html when publishing.
+  
 }
