@@ -68,7 +68,7 @@ thead {
 button:hover { background-color: rgb(120, 6, 6) !important; }
 
 @keyframes flow-bg {
-	100% { background-position: -1920px 993px; }
+	100% { background-position: -1916px 988px; }
 }
 
 #keyboard-shortcuts {
