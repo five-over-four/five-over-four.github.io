@@ -94,6 +94,7 @@ function goForward(branchToTake) { // todo: do not read prompt two if branching.
         }
       }
     }
+    resizeTopMargin(); // this may be a bad idea design-wise?
   }
 }
 
@@ -120,6 +121,7 @@ function goBack() {
 
   getMostRecentItems(); // get any older music changes etc.
   updateValues(index); // get index updates.
+  resizeTopMargin();
 }
 
 // loops backward to update music, icon, color, background

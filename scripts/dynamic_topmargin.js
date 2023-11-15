@@ -1,4 +1,4 @@
-// resize top margin to 20% the empty space below.
+// resize top margin to percentage% the empty space below.
 function resizeTopMargin() {
     const bodyh = document.body.clientHeight;
     const toph = document.getElementById("main-container").clientHeight;
