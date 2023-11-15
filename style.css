@@ -19,20 +19,15 @@ table {
 	border-radius: 10px;
 }
 
+tbody { padding-right: 1em; }
+
 th {
 	text-align: left;
-	padding-left: 1em;
-	padding-top: 3pt;
-	padding-right: 1em;
-}
-td { 
-	padding: 3pt; 
-	padding-left: 1em;
-	padding-right: 1em;
-}
-
-thead {
+	padding: 3pt 1em 3pt 1em;
 	font-size: 14pt;
+}
+td {
+	padding: 3pt 1em 3pt 1em;
 }
 
 .contents {
@@ -76,7 +71,6 @@ button:hover { background-color: rgb(120, 6, 6) !important; }
     color: white;
     font-family: Courier;
     font-size: 12pt;
-	min-width: 400px;
     left: 0;
     top: 0;
 }
