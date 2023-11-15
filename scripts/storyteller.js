@@ -247,6 +247,7 @@ function controlHandler(e) {
       break;
     case "d": // debug key.
       console.log(`debug- indices traversed: ${simulateExactPath(index)}`);
+      break;
   }
 }
 
