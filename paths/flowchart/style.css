@@ -14,7 +14,8 @@ body {
 	color: white;
 	font-size: 45pt;
 	text-align: center;
-	margin: 5pt 0 5pt 0;
+	margin: 1em 0 5pt 0;
+	white-space: nowrap;
 }
 
 .centerer {
@@ -25,8 +26,9 @@ body {
 
 .contents {
 	writing-mode: horizontal-tb;
-  	width: 700px;
 	padding: 0;
+	width: 100%;
+	max-width: 700px;
 	color: white;
 	font-family: super-retro;
 	font-size: 45pt;
@@ -36,7 +38,10 @@ body {
 	position: relative;
 }
 
-.text-padding { padding: 10pt 0 10pt 0; }
+.text {
+	padding: 10pt 0 10pt 0;
+	white-space: nowrap;
+}
 
 .arrow {
 	padding: 10pt 0 10pt 0;
