@@ -12,7 +12,7 @@ body {
 }
 
 .contents {
-	max-width: 700px;
+	max-width: 630px;
 	text-align: center;
 	margin: auto;
 	background-color: rgba(0, 0, 0, 1);
@@ -22,7 +22,7 @@ body {
 
 .text {
 	color: white;
-	max-width: 65%;
+	max-width: 80%;
 	text-align: left;
 	margin: auto;
 	line-height: 1.7;
@@ -99,6 +99,8 @@ p { display: none; }
 img {
 	max-height: 100%;
 	max-width: 100%;
+	width: auto;
+	height: auto;
 	margin-top: 2.8em;
 }
 
