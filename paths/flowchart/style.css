@@ -91,7 +91,7 @@ a:hover {
 }
 
 #background {
-	background-image: url(/media_files/images/ocean_tile_dither.png);
+	background-image: url(/media_files/images/bg_tile_symmetry.png);
 	animation: flow-bg 30s linear infinite;
 }
 
