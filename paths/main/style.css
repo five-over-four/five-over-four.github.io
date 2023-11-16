@@ -7,6 +7,7 @@ body {
 	margin:0;
 	width: 100%;
 	height: 100%;
+	font-size: 62.5%;
 	display: table;
 }
 
@@ -66,13 +67,13 @@ body {
 button { font-weight: bold;}
 button:hover { background-color: rgb(120, 6, 6) !important; }
 
+border: 2px solid;
+
 #last-update {
     position: absolute;
-    background-color: black;
     color: white;
     font-family: Courier;
     font-size: 12pt;
-    padding: 1pt 1em 1pt 1em;
     left: 0;
     top: 0;
 }
