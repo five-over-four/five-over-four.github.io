@@ -15,8 +15,7 @@ body {
 	color: white;
 	font-size: 45pt;
 	text-align: center;
-	margin: 1em 0 5pt 0;
-	white-space: nowrap;
+	margin: 0.5em 0 5pt 0;
 }
 
 .centerer {
