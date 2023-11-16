@@ -76,7 +76,7 @@ button:hover { background-color: rgb(120, 6, 6) !important; }
     top: 0;
 }
 
-@media only screen and (max-width: 1297px) {
+@media only screen and (max-width: 1300px) {
 	#keyboard-shortcuts { display: none; }
 }
 
