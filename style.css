@@ -76,6 +76,10 @@ button:hover { background-color: rgb(120, 6, 6) !important; }
     top: 0;
 }
 
+@media only screen and (max-width: 1297px) {
+	#keyboard-shortcuts { display: none; }
+}
+
 #update-menu {
     position: absolute;
     color: white;
