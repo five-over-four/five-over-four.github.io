@@ -28,7 +28,7 @@ body {
 	writing-mode: horizontal-tb;
 	padding: 0;
 	width: 100%;
-	max-width: 700px;
+	max-width: 12em;
 	color: white;
 	font-family: super-retro;
 	font-size: 45pt;
