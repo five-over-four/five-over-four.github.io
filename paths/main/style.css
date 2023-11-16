@@ -61,7 +61,7 @@ body {
 	right: 0;
 	top: 0;
 }
-#main-button {
+#main-button, #button-two {
 	margin-bottom: 1.5em;
 }
 
