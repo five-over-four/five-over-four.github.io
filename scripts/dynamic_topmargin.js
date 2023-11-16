@@ -13,7 +13,7 @@ function resizeTopMargin() {
     }
     // short mobile.
     else {
-        document.getElementById("main-container").style.marginTop = `${0.03 * (bodyh - toph)}em`;
+        document.getElementById("main-container").style.marginTop = `${0.05 * (bodyh - toph)}em`;
     }
 }
 
