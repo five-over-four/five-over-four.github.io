@@ -13,8 +13,6 @@ body {
 
 .contents {
 	max-width: 700px;
-	padding-top: 2em;
-	padding-bottom: 2em;
 	text-align: center;
 	margin: 4em auto 0;
 	background-color: rgba(0, 0, 0, 1);
@@ -63,11 +61,12 @@ body {
 	right: 0;
 	top: 0;
 }
+#main-button {
+	margin-bottom: 1.5em;
+}
 
 button { font-weight: bold;}
 button:hover { background-color: rgb(120, 6, 6) !important; }
-
-border: 2px solid;
 
 #last-update {
     position: absolute;
@@ -83,6 +82,7 @@ p { display: none }
 img {
 	max-height: 100%;
 	max-width: 100%;
+	margin-top: 2.8em;
 }
 
 a:visited, a:active, a:link {
