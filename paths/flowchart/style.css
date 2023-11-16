@@ -92,7 +92,7 @@ a:hover {
 
 #background {
 	background-image: url(/media_files/images/bg_tile_symmetry.png);
-	animation: flow-bg 30s linear infinite;
+	animation: flow-bg 15s linear infinite;
 }
 
 @keyframes flow-quiet {
@@ -110,5 +110,5 @@ a:hover {
 }
 
 @keyframes flow-bg {
-	100% { background-position: -1916px 988px; }
+	100% { background-position: -1020px 509px; }
 }
