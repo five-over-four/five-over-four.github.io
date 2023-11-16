@@ -6,7 +6,9 @@ html {
 body {
 	margin: 0;
 	display: flex;
-  	flex-direction: column;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
 	background-image: url(/media_files/images/ocean_tile_dither.png);
 	animation: flow-bg 30s linear infinite;
 	height: 100%;
@@ -29,7 +31,7 @@ td {
 
 .contents {
 	max-width: 700px;
-	padding: 2em;
+	padding: 2em 0 2em 0;
 	text-align: center;
 	margin: 4em auto;
 	background-color: rgba(0, 0, 0, 1);
@@ -103,6 +105,13 @@ button:hover { background-color: rgb(120, 6, 6) !important; }
 	border-top: 2px solid #081c3f;
 }
 
+#enable-js {
+	font-size: 30pt;
+	color: white;
+	font-family: Courier;
+	padding-left: 5pt;
+}
+
 #spacer {
 	padding: 8pt;
 }
@@ -112,6 +121,8 @@ button { font-weight: bold; }
 img {
 	max-width: 100%;
 	max-height: 100%;
+	width: auto;
+	height: auto;
 }
 
 a { 
