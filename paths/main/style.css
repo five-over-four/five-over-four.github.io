@@ -14,7 +14,7 @@ body {
 .contents {
 	max-width: 700px;
 	text-align: center;
-	margin: 4em auto 0;
+	margin: auto;
 	background-color: rgba(0, 0, 0, 1);
 	border: 2px solid;
 	position: relative;
@@ -28,6 +28,10 @@ body {
 	line-height: 1.7;
 	font-family: Courier;
 	font-size: 13pt;
+}
+
+@media only screen and (max-width: 900px) {
+	.text { max-width: 80%; }
 }
 
 .styled-button {
@@ -77,7 +81,7 @@ button:hover { background-color: rgb(120, 6, 6) !important; }
     top: 0;
 }
 
-p { display: none }
+p { display: none; }
 .hidden { display: none; }
 img {
 	max-height: 100%;
