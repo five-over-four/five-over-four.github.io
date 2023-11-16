@@ -1,6 +1,6 @@
 var paras = Array.from(document.querySelectorAll('p'));
 const cookiesExist = document.cookie.indexOf("index") != -1;
-const pathRoot = "/paths/main/";
+const pathRoot = "/story/";
 const button = document.getElementById('main-button');
 const saveLoadButton = document.getElementById('load-button');
 button.addEventListener('click', goToFirstPage, false);
