@@ -77,19 +77,19 @@ a:visited, a:active, a:link {
 a:hover { color: #a3a3a3; }
 
 #quiet {
-	background-image: url(/paths/main/quiet/images/teal_tile.png);
+	background-image: url(/story/quiet/images/teal_tile.png);
 	animation: flow-quiet 10s linear infinite;
 	border: 2px solid #012f33;
 }
 
 #rust {
-	background-image: url(/paths/main/rust/images/pipes.png);
+	background-image: url(/story/rust/images/pipes.png);
 	animation: flow-rust 8s linear infinite;
 	border: 2px solid #460808;
 }
 
 #shoreline {
-	background-image: url(/paths/main/shoreline/images/bg_tile_symmetry.png);
+	background-image: url(/story/shoreline/images/bg_tile_symmetry.png);
 	animation: flow-shoreline 13s ease-in-out infinite;
 	border: 2px solid #0C255A;
 }
