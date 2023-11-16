@@ -9,11 +9,11 @@ function resizeTopMargin() {
     }
     // tall mobile.
     else if (screen && screen.width <= 900 && bodyh > 700) {
-        document.getElementById("main-container").style.marginTop = `${0.02 * (bodyh - toph)}em`;
+        document.getElementById("main-container").style.marginTop = `${0.01 * (bodyh - toph)}em`;
     }
     // short mobile.
     else {
-        document.getElementById("main-container").style.marginTop = `${0.03 * (bodyh - toph)}em`;
+        document.getElementById("main-container").style.marginTop = `${0.02 * (bodyh - toph)}em`;
     }
 }
 
