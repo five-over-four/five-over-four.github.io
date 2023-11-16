@@ -37,14 +37,14 @@ document.cookie = "self-redirect=0;sameSite=Strict;Path=/";
 paras[index].style.display = 'block';
 updateValues(index); // get initial setup (color and button prompt etc.)
 
-function makeButton(insideText, id, parent, func, className) {
+function makeButton(insideText, id, parent, buttonFunction, className) {
   var btn = document.createElement("button");
   btn.classList.add(className);
   btn.style.backgroundColor = document.getElementById("main-button").style.backgroundColor;
   btn.innerHTML = insideText;
   btn.id = id;
   document.getElementById(parent).appendChild(btn);
-  btn.addEventListener('click', func, false);
+  btn.addEventListener('click', buttonFunction, false);
 }
 
 // helper function for goFoward.
@@ -242,13 +242,13 @@ function controlHandler(e) {
       }
       break;
     case "s":
-      createCookies(0);
+      createCookies();
       break;
     case "l":
       loadSave();
       break;
     case "d": // debug key.
-      console.log(`debug- indices traversed: ${simulateExactPath(index)}`);
+      console.log("this is the debug key. it currently does nothing. this is probably a good thing.");
       break;
   }
 }
@@ -259,14 +259,14 @@ function controlHandler(e) {
  */
 
 // the self-redirect cookie is read at page load to see "oh, we're arriving from elsewhere".
-function createCookies(selfRedirect=0) {
+function createCookies() {
   const choicesSaved = choices.join(","); // not defined at start of page somehow.
   const sameSite = ";sameSite=Strict";
   const path = ";Path=/"
   document.cookie = "choices=" + choicesSaved + sameSite + path;
   document.cookie = "index=" + index + sameSite + path;
   document.cookie = "pagename=" + window.location.pathname.split('.')[0].split("/").at(-1) + sameSite + path;
-  document.cookie = "self-redirect=" + selfRedirect + sameSite + path;
+  document.cookie = "self-redirect=0" + sameSite + path;
   cookiesExist = true;
 }
 

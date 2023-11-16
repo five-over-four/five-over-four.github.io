@@ -34,6 +34,19 @@ body {
 	.text { max-width: 85%; }
 }
 
+#popup {
+	font-family: super-retro;
+	color: white;
+	font-size: 30pt;
+	text-align: center;
+	padding-top: 5pt;
+}
+
+@font-face {
+	font-family: super-retro;
+	src: url(/fonts/Web437_ATT_PC6300.woff);
+}
+
 .styled-button {
 	border: none;
 	color: white;
