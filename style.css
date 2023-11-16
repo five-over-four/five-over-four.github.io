@@ -34,7 +34,7 @@ td {
 	text-align: center;
 	margin: 4em auto;
 	background-color: rgba(0, 0, 0, 1);
-	border: 2px solid #1b2c4c;
+	border: 2px solid #081c3f;
 	z-index: 1;
 }
 
@@ -46,7 +46,7 @@ td {
 }
 
 .styled-button {
-	background-color: #1b2c4c;
+	background-color: #081c3f;
 	border: none;
 	color: white;
 	padding: 10px 20px;
@@ -101,7 +101,7 @@ button:hover { background-color: rgb(120, 6, 6) !important; }
 	bottom: 0;
 	margin: 0;
 	width: 100%;
-	border-top: 2px solid #1b2c4c;
+	border-top: 2px solid #081c3f;
 }
 
 #spacer {
