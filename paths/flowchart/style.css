@@ -1,0 +1,69 @@
+html {
+	margin:0;
+	height:100%;
+}
+
+body {
+	margin:0;
+	width: 100%;
+	height: 100%;
+	display: table;
+}
+
+.contents {
+	max-width: 700px;
+	height: 200px;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	text-align: center;
+	margin: 4em auto 0;
+	border: 2px solid white;
+	position: relative;
+}
+
+a:visited, a:active, a:link {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+a:hover {
+	color: #FF0000;
+}
+
+#quiet {
+	background-image: url(/paths/main/quiet/images/teal_tile.png);
+	animation: flow-quiet 10s linear infinite;
+}
+
+#rusty {
+	background-image: url(/paths/main/rusty/images/pipes.png);
+	animation: flow-rusty 8s linear infinite;
+}
+
+#shoreline {
+	background-image: url(/paths/main/shoreline/images/bg_tile_symmetry.png);
+	animation: flow-shoreline 13s ease-in-out infinite;
+}
+
+#background {
+	background-image: url(/media_files/images/ocean_tile_dither.png);
+	animation: flow-bg 30s linear infinite;
+}
+
+@keyframes flow-quiet {
+	100% { background-position: 512px 256px }
+}
+
+@keyframes flow-rusty {
+	100% { background-position: -228px 486px }
+}
+
+@keyframes flow-shoreline {
+	0% { background-position: 0px 0; }
+	50% { background-position: 1020px 100px; }
+	100% { background-position: 0px 0; }
+}
+
+@keyframes flow-bg {
+	100% { background-position: -1916px 988px; }
+}
