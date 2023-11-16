@@ -80,6 +80,10 @@ border: 2px solid;
 
 p { display: none }
 .hidden { display: none; }
+img {
+	max-height: 100%;
+	max-width: 100%;
+}
 
 a:visited, a:active, a:link {
 	text-decoration: none;
