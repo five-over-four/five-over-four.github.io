@@ -15,11 +15,10 @@ body {
 	max-width: 630px;
 	width: 100%;
 	text-align: center;
-	margin: auto;
+	margin: 10% auto 2em auto;
 	background-color: rgba(0, 0, 0, 1);
 	border: 2px solid;
 	position: relative;
-	margin-bottom: 2em;
 	display: block;
 }
 
@@ -49,6 +48,7 @@ body {
 	text-align: center;
 	padding-top: 5pt;
 	animation: 1s fade-in-out linear;
+	margin: 0 auto auto auto;
 }
 
 @keyframes fade-in-out {

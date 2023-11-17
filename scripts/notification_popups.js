@@ -6,7 +6,7 @@ loadButton.addEventListener('click', function() {
     if (!cookiesExist) alertText.innerHTML = "You don't have a save!";
     else alertText.innerHTML = "";
     alertText.id = "popup";
-    document.body.appendChild(alertText);
+    document.body.insertBefore(alertText, document.getElementById("back-button"));
     setTimeout(function() {
         alertText.remove();
     }, 1000);
