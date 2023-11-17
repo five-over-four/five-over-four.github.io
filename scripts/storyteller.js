@@ -40,6 +40,7 @@ updateValues(index); // get initial setup (color and button prompt etc.)
 function makeButton(insideText, id, parent, buttonFunction, className) {
   var btn = document.createElement("button");
   btn.classList.add(className);
+  btn.style.backgroundColor = document.getElementById("main-button").style.backgroundColor;
   btn.innerHTML = insideText;
   btn.id = id;
   document.getElementById(parent).appendChild(btn);
