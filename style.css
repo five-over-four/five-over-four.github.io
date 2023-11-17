@@ -6,8 +6,6 @@ html {
 body {
 	margin: 0;
 	display: flex;
-	flex-direction: row;
-    justify-content: center;
 	background-image: url(/media_files/images/ocean_tile_dither.png);
 	animation: flow-bg 30s linear infinite;
 	height: 100%;
@@ -35,11 +33,9 @@ td {
 }
 
 .contents {
-	max-width: 700px;
 	height: fit-content;
-	padding: 0 0 1.5em 0;
 	text-align: center;
-	margin: 4em auto;
+	margin: auto;
 	background-color: rgba(0, 0, 0, 1);
 	border: 2px solid #081c3f;
 	z-index: 1;
@@ -60,13 +56,19 @@ td {
 	text-align: center;
 	font-size: 12pt;
 	font-family: 'Courier New', Courier, monospace;
-	margin-top: 3pt;
-	margin-left: 2em;
-	margin-right: 2em;
+	margin: 0 2em 0 2em;
+}
+
+#main-button, #load-button {
+	margin-bottom: 1.2em;
 }
 
 button { font-weight: bold; }
-button:hover, button:active { background-color: rgb(120, 6, 6) !important; }
+button:active { background-color: rgb(120, 6, 6) !important; }
+
+@media (hover: hover) { 
+	button:hover {background-color: rgb(120, 6, 6) !important; }
+}
 
 @keyframes flow-bg {
 	100% { background-position: -1916px 988px; }
@@ -83,7 +85,7 @@ button:hover, button:active { background-color: rgb(120, 6, 6) !important; }
 
 @media only screen and (max-width: 1300px) {
 	#keyboard-shortcuts { display: none; }
-	button:hover { background-color: white !important; }
+	button:hover { background-color: #081c3f !important; }
 }
 
 @media only screen and (min-width: 1301px) {

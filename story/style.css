@@ -30,11 +30,6 @@ body {
 	font-size: 13pt;
 }
 
-@media only screen and (max-width: 900px) {
-	button:hover { background-color: white !important; }
-	button:active { background-color:rgb(120, 6, 6) ! important; }
-}
-
 @media only screen and (max-width: 628px) {
 	.contents { border-style: solid none;} 
 }
@@ -70,6 +65,12 @@ body {
 	margin: 0 2em 0 2em;
 }
 
+button:active { background-color: rgb(120, 6, 6) !important; }
+
+@media (hover: hover) { 
+	button:hover { background-color: rgb(120, 6, 6) !important; }
+}
+
 .cookie-button {
 	border: none;
 	color: white;
@@ -94,7 +95,6 @@ body {
 }
 
 button { font-weight: bold;}
-button:hover { background-color: rgb(120, 6, 6) !important; }
 
 #last-update {
     position: absolute;

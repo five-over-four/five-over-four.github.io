@@ -1,6 +1,6 @@
 var paras = Array.from(document.querySelectorAll('p'));
 const cookiesExist = document.cookie.indexOf("index") != -1;
-const pathRoot = "/story/";
+const pathRoot = "/";
 const button = document.getElementById('main-button');
 const saveLoadButton = document.getElementById('load-button');
 button.addEventListener('click', goToFirstPage, false);
@@ -34,11 +34,11 @@ function loadSave() {
   var cookies = document.cookie.split(";");
   const pagenameIndex = cookies.findIndex(e => e.includes("pagename"));
   const nextPagename = cookies[pagenameIndex].split("=")[1];
-  window.location.href = pathRoot + nextPagename; // remove .html when publishing.
+  window.location.href = "/story/" + nextPagename; // remove .html when publishing.
 }
 
 function goToFirstPage() {
-  window.location.href = pathRoot + "quiet"; // remove .html when publishing.
+  window.location.href = "/story/quiet"; // remove .html when publishing.
 }
 
 function updateValues() {
@@ -57,7 +57,7 @@ function updateValues() {
         document.getElementById("main-button").innerHTML = value;
         break;
       case "link":
-        window.location.href = pathRoot + value; // remove .html when publishing.
+        window.location.href = "/story/" + value; // remove .html when publishing.
     }
   }
 }
