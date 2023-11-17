@@ -35,6 +35,10 @@ body {
 	button:active { background-color:rgb(120, 6, 6) ! important; }
 }
 
+@media only screen and (max-width: 628px) {
+	.contents { border-style: solid none;} 
+}
+
 @font-face {
 	font-family: super-retro;
 	src: url(/fonts/Web437_ATT_PC6300.woff);
@@ -63,9 +67,7 @@ body {
 	text-align: center;
 	font-size: 12pt;
 	font-family: 'Courier New', Courier, monospace;
-	margin-top: 3pt;
-	margin-left: 2em;
-	margin-right: 2em;
+	margin: 0 2em 0 2em;
 }
 
 .cookie-button {
@@ -88,7 +90,7 @@ body {
 	top: 0;
 }
 #main-button, #button-two {
-	margin-bottom: 1.5em;
+	margin-bottom: 1.2em;
 }
 
 button { font-weight: bold;}
@@ -103,7 +105,10 @@ button:hover { background-color: rgb(120, 6, 6) !important; }
     top: 0;
 }
 
-p { display: none; }
+p { 
+	display: none;
+	margin: 1em
+}
 .hidden { display: none; }
 img {
 	max-height: 100%;
