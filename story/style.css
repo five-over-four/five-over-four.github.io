@@ -35,17 +35,25 @@ body {
 	button:active { background-color:rgb(120, 6, 6) ! important; }
 }
 
-#popup {
-	font-family: super-retro;
-	color: white;
-	font-size: 30pt;
-	text-align: center;
-	padding-top: 5pt;
-}
-
 @font-face {
 	font-family: super-retro;
 	src: url(/fonts/Web437_ATT_PC6300.woff);
+}
+
+#popup {
+	font-family: super-retro;
+	color: white;
+	font-size: 25pt;
+	text-align: center;
+	padding-top: 5pt;
+	animation: 1s fade-in-out linear;
+}
+
+@keyframes fade-in-out {
+	0% { opacity: 0; }
+	15% { opacity: 1; }
+	85% { opacity: 1; }
+	100% { opacity: 0; }
 }
 
 .styled-button {

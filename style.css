@@ -59,7 +59,8 @@ td {
 	margin-right: 2em;
 }
 
-button:hover { background-color: rgb(120, 6, 6) !important; }
+button { font-weight: bold; }
+button:hover, button:active { background-color: rgb(120, 6, 6) !important; }
 
 @keyframes flow-bg {
 	100% { background-position: -1916px 988px; }
@@ -76,6 +77,7 @@ button:hover { background-color: rgb(120, 6, 6) !important; }
 
 @media only screen and (max-width: 1300px) {
 	#keyboard-shortcuts { display: none; }
+	button:hover { background-color: white !important; }
 }
 
 @media only screen and (min-width: 1301px) {
@@ -115,8 +117,6 @@ button:hover { background-color: rgb(120, 6, 6) !important; }
 #spacer {
 	padding: 8pt;
 }
-
-button { font-weight: bold; }
 
 img {
 	max-width: 100%;
