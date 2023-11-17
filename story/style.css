@@ -22,7 +22,7 @@ body {
 
 .text {
 	color: white;
-	max-width: 80%;
+	max-width: 85%;
 	text-align: left;
 	margin: auto;
 	line-height: 1.7;
@@ -31,7 +31,8 @@ body {
 }
 
 @media only screen and (max-width: 900px) {
-	.text { max-width: 85%; }
+	button:hover { background-color: white !important; }
+	button:active { background-color:rgb(120, 6, 6) ! important; }
 }
 
 #popup {

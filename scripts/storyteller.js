@@ -55,7 +55,7 @@ function onCorrectBranch(index) {
 
 // every time a choice is presented, pressing the left or right button adds a
 // 1 or 2 into choices that's used to skip the opposing branch elements.
-function goForward(branchToTake) { // todo: do not read prompt two if branching.
+function goForward(branchToTake = "branch1") {
   
   return function () {
 
@@ -94,7 +94,7 @@ function goForward(branchToTake) { // todo: do not read prompt two if branching.
         }
       }
     }
-    resizeTopMargin(); // this may be a bad idea design-wise?
+    resizeTopMargin(); // this is better for lots of variance in text length.
   }
 }
 
@@ -225,7 +225,8 @@ function controlHandler(e) {
   key = e["key"];
   switch(key) {
     case "ArrowRight":
-      document.getElementById("main-button").click();
+      //document.getElementById("main-button").click();
+      goForward()(); // function inside function for eventListener. looks awful.
       break;
     case "ArrowLeft":
       goBack();
