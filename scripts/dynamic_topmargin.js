@@ -18,8 +18,8 @@ function resizeTopMargin() {
         mainContainer.style.marginTop = `${0.02 * (screenHeight - toph)}em`;
     }
     // minimum margin.
-    if (Number(mainContainer.style.marginTop.split("em")[0]) < 2) {
-        mainContainer.style.marginTop = "2em";
+    if (Number(mainContainer.style.marginTop.split("em")[0]) < 2.2) {
+        mainContainer.style.marginTop = "2.2em";
     }
 }
 

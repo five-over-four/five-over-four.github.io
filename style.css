@@ -1,11 +1,13 @@
 html { 
 	margin: 0;
+	padding: 0;
 	height: 100%;
 }
 
 body {
 	margin: 0;
 	display: flex;
+	flex-direction: column;
 	background-image: url(/media_files/images/ocean_tile_dither.png);
 	animation: flow-bg 30s linear infinite;
 	height: 100%;
@@ -33,12 +35,12 @@ td {
 }
 
 .contents {
-	height: fit-content;
 	text-align: center;
-	margin: auto;
+	position: relative;
+	margin: auto auto 2em auto;
 	background-color: rgba(0, 0, 0, 1);
 	border: 2px solid #081c3f;
-	z-index: 1;
+	display: block;
 }
 
 .text {
@@ -60,24 +62,18 @@ td {
 }
 
 #bottom-bar {
-	position: fixed;
 	display: flex;
-	justify-content: center;
-	bottom: 0;
-	width: 100%;
+	margin: auto 0 0 0;
 }
 
 .bottom-button {
 	background-color: #081c3f;
 	font-family: 'Courier New', Courier, monospace;
-	text-wrap:nowrap;
 	font-size: 14pt;
 	border: none;
 	color: white;
 	padding: 10px 20px;
 	width: 100%;
-	display: block;
-	text-align: center;
 }
 
 #main-button, #load-button {
