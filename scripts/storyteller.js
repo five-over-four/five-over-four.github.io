@@ -40,7 +40,6 @@ updateValues(index); // get initial setup (color and button prompt etc.)
 function makeButton(insideText, id, parent, buttonFunction, className) {
   var btn = document.createElement("button");
   btn.classList.add(className);
-  btn.style.backgroundColor = document.getElementById("main-button").style.backgroundColor;
   btn.innerHTML = insideText;
   btn.id = id;
   document.getElementById(parent).appendChild(btn);
@@ -94,7 +93,7 @@ function goForward(branchToTake = "branch1") {
         }
       }
     }
-    resizeTopMargin(); // this is better for lots of variance in text length.
+    resizeTopMargin();
   }
 }
 
@@ -186,9 +185,8 @@ function updateValues(atIndex, whichAttributes=null) {
         break;
       case "color":
         document.getElementById("main-container").style.borderColor = value;
-        document.getElementById("main-button").style.backgroundColor = value;
-        document.getElementById("save-button").style.backgroundColor = value;
-        document.getElementById("load-button").style.backgroundColor = value;
+        let allButtons = document.getElementsByTagName("button");
+        Array.from(allButtons).forEach(e => e.style.backgroundColor = value);
         break;
       case "link":
         window.location.href = pathRoot.replace(pagename, value); // remove .html when publishing.

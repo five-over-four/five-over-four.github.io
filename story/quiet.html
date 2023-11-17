@@ -34,13 +34,15 @@
         }
     </style>
 
-    <div class="contents" id="main-container">
+    <div id="last-update">Last update: November 14th 2023</div>
+
+    <main class="contents" id="main-container">
         <img src="/media_files/images/open.png" id="main-image" width="483" height="354">
         <div class="text">
 
         <p prompt="Begin." icon="open.png" color="#012f33"></p>
 
-        <p prompt="Look around.">
+        <p prompt="Look around." color="red">
         Floating in an endless ocean,
         you awaken to a sense of unreality.
         You feel your way through the stillness.
@@ -189,15 +191,17 @@
 
         </div>
         <button class="styled-button" id="main-button"></button>
-    </div>
+    </main>
+
+    <button class="styled-button" id="back-button" onclick="window.location.href='/';">
+        Front page
+    </button>
 
     <script src="/scripts/dynamic_topmargin.js"></script>
     <script src="/scripts/storyteller.js"></script>
     <script src="/scripts/mobile_swipe.js"></script>
     <script src="/scripts/notification_popups.js"></script>
     <audio loop id="play-music" src="./quiet/sounds/quiet_1.mp3"></audio>
-
-    <div id="last-update">Last update: November 14th 2023</div>
 
 </body>
 </html>
