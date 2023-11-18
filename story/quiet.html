@@ -37,10 +37,13 @@
     <div id="last-update">Last update: November 14th 2023</div>
 
     <main class="contents" id="main-container">
-        <img src="/media_files/images/open.png" id="main-image" width="483" height="354">
+        <img id="main-image" width="483" height="354">
+        <audio loop id="play-music"></audio>
         <div class="text">
 
-        <p prompt="Begin." icon="open.png" color="#012f33"></p>
+        <p prompt="Begin." icon="open.png" 
+        color="#012f33" music="quiet_1.mp3" 
+        background="teal_tile.png"></p>
 
         <p prompt="Look around.">
         Floating in an endless ocean,
@@ -201,7 +204,6 @@
     <script src="/scripts/storyteller.js"></script>
     <script src="/scripts/mobile_swipe.js"></script>
     <script src="/scripts/notification_popups.js"></script>
-    <audio loop id="play-music" src="./quiet/sounds/quiet_1.mp3"></audio>
 
 </body>
 </html>

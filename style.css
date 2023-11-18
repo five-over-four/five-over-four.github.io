@@ -36,11 +36,9 @@ td {
 
 .contents {
 	text-align: center;
-	position: relative;
 	margin: auto auto 2em auto;
-	background-color: rgba(0, 0, 0, 1);
+	background-color: black;
 	border: 2px solid #081c3f;
-	display: block;
 }
 
 .text {
@@ -72,7 +70,7 @@ td {
 	font-size: 14pt;
 	border: none;
 	color: white;
-	padding: 10px 20px;
+	padding: 8px;
 	width: 100%;
 }
 
@@ -94,9 +92,8 @@ button:active { background-color: rgb(120, 6, 6) !important; }
 #keyboard-shortcuts {
 	position: absolute;
 	background-color: rgba(0, 0, 0, 0.7);
-	border-radius: 10px;
 	color: white;
-    left: 0;
+    right: 0;
     top: 0;
 }
 
@@ -104,19 +101,13 @@ button:active { background-color: rgb(120, 6, 6) !important; }
 	#keyboard-shortcuts { display: none; }
 }
 
-@media only screen and (min-width: 1301px) {
-	#update-menu {
-		position: absolute;
-		top: 0;
-		right: 0;
-	}
-}
-
 #update-menu {
 	font-family: 'Courier New', Courier, monospace;
 	font-size: 12pt;
 	color: white;
 	position: absolute;
+	top: 0;
+	left: 0;
 	margin-bottom: 1em;
 }
 

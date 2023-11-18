@@ -178,11 +178,15 @@ function updateValues(atIndex, whichAttributes=null) {
         new Audio(pathRoot + "/sounds/" + value).play();
         break;
       case "music":
-        document.getElementById("play-music").src = value;
-        document.getElementById("play-music").play();
+        let oldMusic = document.getElementById("play-music").src.split("/").at(-1);
+        let newMusic = value.split("/").at(-1);
+        if (newMusic != oldMusic) {
+          document.getElementById("play-music").src = pathRoot + "/sounds/" + value;
+        }
+        if (index != 0) document.getElementById("play-music").play();
         break;
       case "background":
-        document.body.style.backgroundImage = "url(${pathRoot}/{value})";
+        document.body.style.backgroundImage = pathRoot + "/images/" + value;
         break;
       case "color":
         document.getElementById("main-container").style.borderColor = value;

@@ -37,10 +37,13 @@
     <div id="last-update">Last update: November 11th 2023</div>
 
     <main class="contents" id="main-container">
-        <img src="/media_files/images/open.png" id="main-image" width="483" height="354">
+        <img id="main-image" width="483" height="354">
+        <audio loop id="play-music"></audio>
         <div class="text">
 
-        <p color="#460808" prompt="Begin." icon="open.png"></p>
+        <p prompt="Begin." icon="open.png" 
+        color="#460808" music="warning.mp3"
+        background="pipes.png"></p>
 
         <p prompt="&quotDon't-&quot" prompt2="&quotWhat...?&quot" icon="bug.png">
         It's hot. It's too hot.
@@ -64,7 +67,6 @@
     <script src="/scripts/storyteller.js"></script>
     <script src="/scripts/mobile_swipe.js"></script>
     <script src="/scripts/notification_popups.js"></script>
-    <audio loop id="play-music" src="./rust/sounds/warning.mp3"></audio>
 
 </body>
 </html>

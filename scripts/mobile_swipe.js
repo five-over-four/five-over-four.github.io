@@ -3,7 +3,6 @@ let endX = 0;
 let startY = 0;
 let endY = 0;
 
-// swipe if swipe motion took less than one second.
 function swipeStory(timeDelta) {
     if (Math.abs(startY - endY) >= Math.abs(startX - endX)) return;
     if (startX - endX >= 100 && timeDelta < 1000) {
