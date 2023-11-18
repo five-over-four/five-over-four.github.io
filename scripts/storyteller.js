@@ -265,12 +265,11 @@ function controlHandler(e) {
 // the self-redirect cookie is read at page load to see "oh, we're arriving from elsewhere".
 function createCookies() {
   const choicesSaved = choices.join(","); // not defined at start of page somehow.
-  const sameSite = ";sameSite=Strict";
-  const path = ";Path=/"
-  document.cookie = "choices=" + choicesSaved + sameSite + path;
-  document.cookie = "index=" + index + sameSite + path;
-  document.cookie = "pagename=" + window.location.pathname.split('.')[0].split("/").at(-1) + sameSite + path;
-  document.cookie = "self-redirect=0" + sameSite + path;
+  const properties = ";sameSite=Strict;Max-Age=34560000;Path=/";
+  document.cookie = "choices=" + choicesSaved + properties;
+  document.cookie = "index=" + index + properties;
+  document.cookie = "pagename=" + window.location.pathname.split('.')[0].split("/").at(-1) + properties;
+  document.cookie = "self-redirect=0" + properties;
   cookiesExist = true;
 }
 
