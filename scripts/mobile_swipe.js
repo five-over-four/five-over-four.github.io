@@ -15,7 +15,7 @@ function swipeStory(timeDelta) {
 
 function swipeFrontpage(timeDelta) {
     if (Math.abs(startY - endY) >= Math.abs(startX - endX)) return;
-    if (startX - endX >> 100 && timeDelta < 1000) goToFirstPage();
+    if (startX - endX >= 100 && timeDelta < 1000) goToFirstPage();
 }
 
 if (window.innerWidth <= 900) {
