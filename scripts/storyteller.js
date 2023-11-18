@@ -252,7 +252,7 @@ function controlHandler(e) {
       loadSave();
       break;
     case "d": // debug key.
-      console.log("this is the debug key. it currently does nothing. this is probably a good thing.");
+      console.log(`Steps taken: ${indicesVisited.length}`);
       break;
   }
 }

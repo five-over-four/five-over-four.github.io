@@ -25,6 +25,22 @@
     <main class="contents" id="main-container">
 		<h1 id="story-title">Five Over Four</h1>
         <img src="/media_files/images/open.png" id="main-image" width="483" height="354">
+
+		<script>
+			function switchImage() {
+				let imgList = [
+					"/media_files/images/open.png", 
+					"/media_files/images/open.png", 
+					"/media_files/images/closed.png"
+				];
+				document.getElementById("main-image").src = imgList[Math.round(Math.random() * 2)];
+			}
+			function blink() {
+				setTimeout(switchImage(), 1000);
+			}
+			setInterval(blink, 300);
+		</script>
+
         <div class="text">
 
         <p prompt="Read from the beginning">
