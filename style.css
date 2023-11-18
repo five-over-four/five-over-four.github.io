@@ -35,6 +35,8 @@ td {
 }
 
 .contents {
+	max-width: 550px;
+	width: 100%;
 	text-align: center;
 	margin: auto auto 2em auto;
 	background-color: black;
@@ -89,6 +91,10 @@ button:active { background-color: rgb(120, 6, 6) !important; }
 	100% { background-position: -1916px 988px; }
 }
 
+@media only screen and (max-width: 550px) {
+	.contents { border-style: solid none;} 
+}
+
 #keyboard-shortcuts {
 	position: absolute;
 	background-color: rgba(0, 0, 0, 0.7);
@@ -97,7 +103,11 @@ button:active { background-color: rgb(120, 6, 6) !important; }
     top: 0;
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1060px) {
+	#keyboard-shortcuts { display: none; }
+}
+
+@media (hover:none) {
 	#keyboard-shortcuts { display: none; }
 }
 
