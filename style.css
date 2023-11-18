@@ -14,9 +14,15 @@ body {
 }
 
 #story-title {
-	font-family: 'Courier New', Courier, monospace;
+	font-family: super-retro;
+	font-size: 30pt;
 	color: white;
 	margin: 5pt 0 10pt 0;
+}
+
+@font-face {
+	font-family: super-retro;
+	src: url(/fonts/Web437_ATT_PC6300.woff);
 }
 
 table {
