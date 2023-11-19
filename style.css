@@ -67,6 +67,23 @@ td {
 	margin: 0 2em 0 2em;
 }
 
+#popup {
+	font-family: super-retro;
+	color: white;
+	font-size: 25pt;
+	text-align: center;
+	padding-top: 5pt;
+	animation: 1s fade-in-out linear;
+	margin: 0 auto auto auto;
+}
+
+@keyframes fade-in-out {
+	0% { opacity: 0; }
+	15% { opacity: 1; }
+	85% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
 #bottom-bar {
 	display: flex;
 	margin: auto 0 0 0;

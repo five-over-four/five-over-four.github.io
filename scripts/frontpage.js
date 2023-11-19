@@ -2,9 +2,9 @@ var paras = Array.from(document.querySelectorAll('p'));
 const cookiesExist = document.cookie.indexOf("index") != -1;
 const pathRoot = "/";
 const button = document.getElementById('main-button');
-const saveLoadButton = document.getElementById('load-button');
+const loadButton = document.getElementById('load-button');
 button.addEventListener('click', goToFirstPage, false);
-saveLoadButton.addEventListener('click', loadSave, false);
+loadButton.addEventListener('click', loadSave, false);
 document.addEventListener("keydown", controlHandler);
 updateValues();
 
@@ -17,8 +17,6 @@ function controlHandler(e) {
       break;
     case "l":
       loadSave();
-      break;
-    case "h":
       break;
   }
 }
@@ -61,3 +59,14 @@ function updateValues() {
     }
   }
 }
+
+loadButton.addEventListener('click', function() {
+    var alertText = document.createElement("div");
+    if (!cookiesExist) alertText.innerHTML = "You don't have a save!";
+    else alertText.innerHTML = "";
+    alertText.id = "popup";
+    document.body.insertBefore(alertText, document.getElementById("bottom-bar"));
+    setTimeout(function() {
+        alertText.remove();
+    }, 1000);
+});
