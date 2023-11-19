@@ -158,6 +158,8 @@ img {
 	height: auto;
 }
 
+p { line-height: 1.7; }
+
 a { 
 	text-decoration: none; 
 	color: white;
