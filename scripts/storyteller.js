@@ -178,12 +178,18 @@ function updateValues(atIndex, whichAttributes=null) {
         new Audio(pathRoot + "/sounds/" + value).play();
         break;
       case "music":
-        let oldMusic = document.getElementById("play-music").src.split("/").at(-1);
-        let newMusic = value.split("/").at(-1);
-        if (newMusic != oldMusic) {
-          document.getElementById("play-music").src = pathRoot + "/sounds/" + value;
+        let musicElement = document.getElementById("play-music");
+        let oldMusicName = musicElement.src.split("/").at(-1);
+        let newMusicName = value.split("/").at(-1);
+        if (newMusicName != oldMusicName) {
+          let oldMusicTime = musicElement.currentTime;
+          musicElement.src = pathRoot + "/sounds/" + value;
+          // check if this is a 'level of intensity' of a group of tracks.
+          if (oldMusicName.includes("layer") && newMusicName.includes("layer")) {
+            musicElement.currentTime = oldMusicTime;
+          }
         }
-        if (index != 0) document.getElementById("play-music").play();
+        if (index != 0) musicElement.play();
         break;
       case "background":
         document.body.style.backgroundImage = pathRoot + "/images/" + value;
