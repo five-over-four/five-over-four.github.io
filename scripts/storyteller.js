@@ -181,9 +181,18 @@ function updateValues(atIndex, whichAttributes=null) {
         let musicElement = document.getElementById("play-music");
         let oldMusicName = musicElement.src.split("/").at(-1);
         let newMusicName = value.split("/").at(-1);
+
+        if (newMusicName == "silent") { // reserved keyword.
+          musicElement.pause();
+          break;
+        }
+
+        musicElement.currentTime = 0;
+
         if (newMusicName != oldMusicName) {
           let oldMusicTime = musicElement.currentTime;
           musicElement.src = pathRoot + "/sounds/" + value;
+
           // check if this is a 'level of intensity' of a group of tracks.
           if (oldMusicName.includes("layer") && newMusicName.includes("layer")) {
             musicElement.currentTime = oldMusicTime;
@@ -192,7 +201,7 @@ function updateValues(atIndex, whichAttributes=null) {
         if (index != 0) musicElement.play();
         break;
       case "background":
-        document.body.style.backgroundImage = pathRoot + "/images/" + value;
+        document.body.style.backgroundImage = `url(${pathRoot + "/images/" + value})`
         break;
       case "color":
         document.getElementById("main-container").style.borderColor = value;
@@ -200,9 +209,26 @@ function updateValues(atIndex, whichAttributes=null) {
         Array.from(allButtons).forEach(e => e.style.backgroundColor = value);
         break;
       case "link":
-        window.location.href = pathRoot.replace(pagename, value); // remove .html when publishing.
+        window.location.href = pathRoot.replace(pagename, value) + ".html"; // remove .html when publishing.
     }
   }
+}
+
+// gotta figure out a better way to do this later.
+function fadeOut(element, timestep=20, amount=0.03) {
+  if (element.volume > amount) {
+    element.volume -= amount;
+    setTimeout(function() { fadeOut(element) }, timestep)
+  }
+  else element.volume = 0;
+}
+
+function fadeIn(element, timestep=20, amount=0.03) {
+  if (element.volume < 1 - amount) {
+    element.volume += amount;
+    setTimeout(function() { fadeIn(element) }, timestep)
+  }
+  else element.volume = 1;
 }
 
 // takes CHOICES and returns the list of visited indices so
@@ -301,7 +327,6 @@ function readCookies() {
 function loadSave() {
 
   if (!cookiesExist) {
-    console.log("you don't have a current save.");
     return;
   }
 
@@ -309,6 +334,6 @@ function loadSave() {
   var cookies = document.cookie.split(";");
   const pagenameIndex = cookies.findIndex(e => e.includes("pagename"));
   const nextPagename = cookies[pagenameIndex].split("=")[1];
-  window.location.href = pathRoot.replace(pagename, nextPagename); // remove .html when publishing.
+  window.location.href = pathRoot.replace(pagename, nextPagename) + ".html"; // remove .html when publishing.
   
 }
