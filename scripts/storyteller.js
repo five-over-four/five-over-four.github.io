@@ -187,11 +187,10 @@ function updateValues(atIndex, whichAttributes=null) {
           break;
         }
 
-        musicElement.currentTime = 0;
-
         if (newMusicName != oldMusicName) {
           let oldMusicTime = musicElement.currentTime;
           musicElement.src = pathRoot + "/sounds/" + value;
+          musicElement.currentTime = 0;
 
           // check if this is a 'level of intensity' of a group of tracks.
           if (oldMusicName.includes("layer") && newMusicName.includes("layer")) {
@@ -212,23 +211,6 @@ function updateValues(atIndex, whichAttributes=null) {
         window.location.href = pathRoot.replace(pagename, value) + ".html"; // remove .html when publishing.
     }
   }
-}
-
-// gotta figure out a better way to do this later.
-function fadeOut(element, timestep=20, amount=0.03) {
-  if (element.volume > amount) {
-    element.volume -= amount;
-    setTimeout(function() { fadeOut(element) }, timestep)
-  }
-  else element.volume = 0;
-}
-
-function fadeIn(element, timestep=20, amount=0.03) {
-  if (element.volume < 1 - amount) {
-    element.volume += amount;
-    setTimeout(function() { fadeIn(element) }, timestep)
-  }
-  else element.volume = 1;
 }
 
 // takes CHOICES and returns the list of visited indices so
