@@ -183,10 +183,11 @@ function updateValues(atIndex, whichAttributes=null) {
         let newMusicName = value.split("/").at(-1);
 
         if (newMusicName == "silent") { // reserved keyword.
-          musicElement.pause();
-          musicElement.currentTime = 0;
+          fadeOut(musicElement, timeout=25);
           break;
         }
+
+        fadeIn(musicElement, timeout=50);
 
         if (newMusicName != oldMusicName) {
           let oldMusicTime = musicElement.currentTime;
@@ -209,9 +210,28 @@ function updateValues(atIndex, whichAttributes=null) {
         Array.from(allButtons).forEach(e => e.style.backgroundColor = value);
         break;
       case "link":
-        window.location.href = pathRoot.replace(pagename, value); // remove .html when publishing.
+        window.location.href = pathRoot.replace(pagename, value) + ".html"; // remove .html when publishing.
     }
   }
+}
+
+// change values for shorter fades.
+function fadeOut(element, timeout=25) {
+  if (timeout == 0) return;
+  if (element.volume > 0.04) {
+    element.volume -= 0.04;
+    setTimeout(() =>  { fadeOut(element, timeout-1) }, 20)
+  }
+  else element.volume = 0;
+}
+
+function fadeIn(element, timeout=50) {
+  if (timeout == 0) return;
+  if (element.volume < 0.96) {
+    element.volume += 0.04;
+    setTimeout(() => { fadeIn(element, timeout-1) }, 20)
+  }
+  else element.volume = 1;
 }
 
 // takes CHOICES and returns the list of visited indices so
@@ -317,6 +337,6 @@ function loadSave() {
   var cookies = document.cookie.split(";");
   const pagenameIndex = cookies.findIndex(e => e.includes("pagename"));
   const nextPagename = cookies[pagenameIndex].split("=")[1];
-  window.location.href = pathRoot.replace(pagename, nextPagename); // remove .html when publishing.
+  window.location.href = pathRoot.replace(pagename, nextPagename) + ".html"; // remove .html when publishing.
   
 }
