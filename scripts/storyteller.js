@@ -184,6 +184,7 @@ function updateValues(atIndex, whichAttributes=null) {
 
         if (newMusicName == "silent") { // reserved keyword.
           musicElement.pause();
+          musicElement.currentTime = 0;
           break;
         }
 
