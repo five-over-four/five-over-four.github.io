@@ -187,7 +187,7 @@ function updateValues(atIndex, whichAttributes=null) {
           break;
         }
 
-        fadeIn(musicElement, timeout=50);
+        fadeIn(musicElement, timeout=50); // fadeIn has priority.
 
         if (newMusicName != oldMusicName) {
           let oldMusicTime = musicElement.currentTime;
