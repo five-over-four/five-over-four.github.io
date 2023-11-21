@@ -210,7 +210,7 @@ function updateValues(atIndex, whichAttributes=null) {
         Array.from(allButtons).forEach(e => e.style.backgroundColor = value);
         break;
       case "link":
-        window.location.href = pathRoot.replace(pagename, value) + ".html"; // remove .html when publishing.
+        window.location.href = pathRoot.replace(pagename, value); // remove .html when publishing.
     }
   }
 }
@@ -329,14 +329,12 @@ function readCookies() {
 
 function loadSave() {
 
-  if (!cookiesExist) {
-    return;
-  }
+  if (!cookiesExist) return;
 
   document.cookie = "self-redirect=1;sameSite=Strict;Path=/";
   var cookies = document.cookie.split(";");
   const pagenameIndex = cookies.findIndex(e => e.includes("pagename"));
   const nextPagename = cookies[pagenameIndex].split("=")[1];
-  window.location.href = pathRoot.replace(pagename, nextPagename) + ".html"; // remove .html when publishing.
+  window.location.href = pathRoot.replace(pagename, nextPagename); // remove .html when publishing.
   
 }
