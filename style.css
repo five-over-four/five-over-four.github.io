@@ -85,10 +85,21 @@ td {
 
 #bottom-bar {
 	display: flex;
+	flex-direction: row;
 	margin: auto 0 0 0;
 }
 
-.bottom-button {
+.bottom-button-left {
+	background-color: #081c3f;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 14pt;
+	border: none;
+	color: white;
+	padding: 8px;
+	width: 100%;
+}
+
+.bottom-button-right {
 	background-color: #081c3f;
 	font-family: 'Courier New', Courier, monospace;
 	font-size: 14pt;
@@ -141,6 +152,12 @@ button:active { background-color: rgb(120, 6, 6) !important; }
 	top: 0;
 	left: 0;
 	margin-bottom: 1em;
+}
+
+#contact-area {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
 }
 
 #enable-js {
