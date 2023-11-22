@@ -183,11 +183,11 @@ function updateValues(atIndex, whichAttributes=null) {
         let newMusicName = value.split("/").at(-1);
 
         if (newMusicName == "silent") { // reserved keyword.
-          fadeOut(musicElement, timeout=25);
+          fadeOut(musicElement, timeout=100);
           break;
         }
 
-        fadeIn(musicElement, timeout=50); // fadeIn has priority.
+        fadeIn(musicElement, timeout=200); // fadeIn has priority.
 
         if (newMusicName != oldMusicName) {
           let oldMusicTime = musicElement.currentTime;
@@ -216,20 +216,20 @@ function updateValues(atIndex, whichAttributes=null) {
 }
 
 // change values for shorter fades.
-function fadeOut(element, timeout=25) {
+function fadeOut(element, timeout=100) {
   if (timeout == 0) return;
-  if (element.volume > 0.04) {
-    element.volume -= 0.04;
-    setTimeout(() =>  { fadeOut(element, timeout-1) }, 20)
+  if (element.volume > 0.01) {
+    element.volume -= 0.01;
+    setTimeout(() =>  { fadeOut(element, timeout-1) }, 5)
   }
   else element.volume = 0;
 }
 
-function fadeIn(element, timeout=50) {
+function fadeIn(element, timeout=200) {
   if (timeout == 0) return;
-  if (element.volume < 0.96) {
-    element.volume += 0.04;
-    setTimeout(() => { fadeIn(element, timeout-1) }, 20)
+  if (element.volume < 0.99) {
+    element.volume += 0.01;
+    setTimeout(() => { fadeIn(element, timeout-1) }, 5)
   }
   else element.volume = 1;
 }
