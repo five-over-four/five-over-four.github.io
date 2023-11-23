@@ -331,7 +331,7 @@ function loadSave() {
 
   if (!cookiesExist) return;
 
-  document.cookie = "self-redirect=1;sameSite=Strict;Path=/";
+  document.cookie = "self-redirect=1;sameSite=Strict;Max-Age=34560000;Path=/";
   var cookies = document.cookie.split(";");
   const pagenameIndex = cookies.findIndex(e => e.includes("pagename"));
   const nextPagename = cookies[pagenameIndex].split("=")[1];
