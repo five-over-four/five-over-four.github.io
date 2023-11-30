@@ -308,7 +308,7 @@ function controlHandler(e) {
       goBack();
       break;
     case "1":
-      document.getElementById("main-button").click();
+      goForward()();
       break;
     case "2":
       try {

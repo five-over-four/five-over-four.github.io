@@ -6,7 +6,8 @@ let endY = 0;
 function swipeStory(timeDelta) {
     if (Math.abs(startY - endY) >= Math.abs(startX - endX)) return;
     if (startX - endX >= 100 && timeDelta < 1000) {
-        goForward()();
+        // this ensures mobile browsers consider the page "activated".
+        document.getElementById("main-button").click();
     }
     else if (endX - startX >= 100 && timeDelta < 1000) {
         goBack();
