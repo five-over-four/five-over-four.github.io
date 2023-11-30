@@ -2,6 +2,7 @@ var paras = Array.from(document.querySelectorAll('p'));
 const pathRoot = window.location.pathname.split('.')[0];
 const button = document.getElementById('main-button');
 const pagename = pathRoot.split("/").at(-1);
+var currentStyleAdditions = "";
 var cookiesExist = document.cookie.indexOf("index") != -1;
 var started = false;
 
@@ -129,12 +130,12 @@ function goBack() {
 function getMostRecentItems() {
 
   var searchIndex = indicesVisited.length - 1;
-  const desiredAttributes = ["music", "icon", "color", "background"];
+  const desiredAttributes = ["music", "icon", "color", "background", "styles"];
   var seenAttributes = [];
 
   while (searchIndex >= 0) {
 
-    if (seenAttributes.length >= 4) break;
+    if (seenAttributes.length >= 5) break;
 
     pathIndex = indicesVisited[searchIndex];
     attributeNames = paras[pathIndex].getAttributeNames();
@@ -178,28 +179,7 @@ function updateValues(atIndex, whichAttributes=null) {
         new Audio(pathRoot + "/sounds/" + value).play();
         break;
       case "music":
-        let musicElement = document.getElementById("play-music");
-        let oldMusicName = musicElement.src.split("/").at(-1);
-        let newMusicName = value.split("/").at(-1);
-
-        if (newMusicName == "silent") { // reserved keyword.
-          fadeOut(musicElement, timeout=100);
-          break;
-        }
-
-        fadeIn(musicElement, timeout=200); // fadeIn has priority.
-
-        if (newMusicName != oldMusicName) {
-          let oldMusicTime = musicElement.currentTime;
-          musicElement.src = pathRoot + "/sounds/" + value;
-          musicElement.currentTime = 0;
-
-          // check if this is a 'level of intensity' of a group of tracks.
-          if (oldMusicName.includes("layer") && newMusicName.includes("layer")) {
-            musicElement.currentTime = oldMusicTime;
-          }
-        }
-        if (index != 0) musicElement.play();
+        handleMusic();
         break;
       case "background":
         document.body.style.backgroundImage = `url(${pathRoot + "/images/" + value})`
@@ -209,13 +189,71 @@ function updateValues(atIndex, whichAttributes=null) {
         let allButtons = document.getElementsByTagName("button");
         Array.from(allButtons).forEach(e => e.style.backgroundColor = value);
         break;
+      case "styles":
+        parseNewStyles(value);
+        break;
       case "link":
         window.location.href = pathRoot.replace(pagename, value); // remove .html when publishing.
     }
   }
 }
 
-// change values for shorter fades.
+// syntax: ID_name1=style1;style2;...;stylen|ID_name2=...
+// allows for arbitrary style injection in <p> tags with 'styles' attribute.
+// DO NOT put a | or ; at the end if a new element is not coming. will split wrong.
+function parseNewStyles(styleString) {
+
+  if (!styleString && !currentStyleAdditions) return;
+
+  removalPhase = false;
+  if (!styleString) removalPhase = true;
+  else currentStyleAdditions = styleString;
+  let styles = currentStyleAdditions.split("|");
+
+  for (const style of styles) {
+    let fieldID = style.split("=")[0];
+    let additions = style.split("=")[1].split(";");
+
+    for (const addition of additions) {
+      let styleName = addition.split(":")[0];
+      let styleContent = addition.split(":")[1];
+
+      if (!removalPhase) document.getElementById(fieldID).style[styleName] = styleContent;
+      else document.getElementById(fieldID).style[styleName] = "none";
+    }
+  }
+}
+
+// changes musical tracks and deals with fades when silencing.
+// also remembers positions and layers intensity levels.
+// currently prioritises fadeINS.
+function handleMusic() {
+  let musicElement = document.getElementById("play-music");
+  let oldMusicName = musicElement.src.split("/").at(-1);
+  let newMusicName = value.split("/").at(-1);
+
+  if (newMusicName == "silent") { // reserved keyword.
+    fadeOut(musicElement, timeout=100);
+    return;
+  }
+
+  fadeIn(musicElement, timeout=200); // fadeIn has priority.
+
+  if (newMusicName != oldMusicName) {
+    let oldMusicTime = musicElement.currentTime;
+    musicElement.src = pathRoot + "/sounds/" + value;
+    musicElement.currentTime = 0;
+
+    // check if this is a 'level of intensity' of a group of tracks.
+    if (oldMusicName.includes("layer") && newMusicName.includes("layer")) {
+      musicElement.currentTime = oldMusicTime;
+    }
+  }
+  if (index != 0) musicElement.play();
+}
+
+// here 0.01 is the volumeIncrememnt and timeout the maxSteps to fade.
+// 5 is milliseconds per step.
 function fadeOut(element, timeout=100) {
   if (timeout == 0) return;
   if (element.volume > 0.01) {
