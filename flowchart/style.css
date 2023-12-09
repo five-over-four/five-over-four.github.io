@@ -77,7 +77,7 @@ a:visited, a:active, a:link {
 a:hover { color: #a3a3a3; }
 
 #quiet {
-	background-image: url(/story/quiet/images/dark_tile.png);
+	background-image: url(/story/quiet/images/dark_haze.png);
 	animation: flow-quiet 10s linear infinite;
 	border: 2px solid #012f33;
 }
