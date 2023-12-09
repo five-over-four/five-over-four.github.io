@@ -202,7 +202,7 @@ function updateValues(atIndex, whichAttributes=null) {
         parseNewStyles(value);
         break;
       case "link":
-        window.location.href = pathRoot.replace(pagename, value) + ".html"; // remove .html when publishing.
+        window.location.href = pathRoot.replace(pagename, value); // remove .html when publishing.
     }
   }
 }
@@ -240,8 +240,6 @@ function handleMusic() {
   let musicElement = document.getElementById("play-music");
   let oldMusicName = musicElement.src.split("/").at(-1);
   let newMusicName = value.split("/").at(-1);
-
-  console.log(oldMusicName, newMusicName);
 
   // fading out to silence.
   if (newMusicName == "silent") {
@@ -392,6 +390,6 @@ function loadSave() {
   var cookies = document.cookie.split(";");
   const pagenameIndex = cookies.findIndex(e => e.includes("pagename"));
   const nextPagename = cookies[pagenameIndex].split("=")[1];
-  window.location.href = pathRoot.replace(pagename, nextPagename) + ".html"; // remove .html when publishing.
+  window.location.href = pathRoot.replace(pagename, nextPagename); // remove .html when publishing.
   
 }
