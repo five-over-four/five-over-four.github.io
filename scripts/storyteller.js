@@ -249,12 +249,16 @@ function handleMusic() {
   }
 
   else {
+    // without this, music reloads each time you go backward.
+    if (newMusicName == oldMusicName && musicElement.volume == 1) return;
+
     let oldMusicTime = musicElement.currentTime;
     musicElement.src = pathRoot + "/sounds/" + value;
     musicElement.currentTime = 0;
 
     // if 'layer', start at same time so they remain synced.
-    if (oldMusicName.includes("layer") && newMusicName.includes("layer")) {
+    if ((oldMusicName.includes("layer") && newMusicName.includes("layer")) &&
+        (oldMusicName != newMusicName)) {
       musicElement.currentTime = oldMusicTime;
     }
   }
