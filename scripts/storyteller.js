@@ -5,6 +5,7 @@ const pagename = pathRoot.split("/").at(-1);
 var currentStyleAdditions = "";
 var cookiesExist = document.cookie.indexOf("index") != -1;
 var started = false;
+var fadein = false;
 
 document.addEventListener("keydown", controlHandler);
 button.addEventListener('click', goForward('branch1'), false);
@@ -65,7 +66,11 @@ function goForward(branchToTake = "branch1") {
     if (index < paras.length - 1) {
 
       if (!started) {
-        document.getElementById('play-music').play();
+        // this check is required if the reader loads onto a 'silent', 
+        // where no music has been loaded yet.
+        if (document.getElementById('play-music').src) {
+          document.getElementById('play-music').play();
+        }
         document.getElementById('last-update').style.display = 'none';
         started = true;
       }
@@ -104,7 +109,11 @@ function goBack() {
 
   if (index == 0) return;
   if (!started) {
-    document.getElementById('play-music').play();
+    // if loading on a 'silent', no music has been loaded yet,
+    // so the element is empty and will fail to play.
+    if (document.getElementById('play-music').src) {
+      document.getElementById('play-music').play();
+    }
     document.getElementById("last-update").style.display = 'none';
     started = true;
   }
@@ -193,7 +202,7 @@ function updateValues(atIndex, whichAttributes=null) {
         parseNewStyles(value);
         break;
       case "link":
-        window.location.href = pathRoot.replace(pagename, value); // remove .html when publishing.
+        window.location.href = pathRoot.replace(pagename, value) + ".html"; // remove .html when publishing.
     }
   }
 }
@@ -225,46 +234,56 @@ function parseNewStyles(styleString) {
 }
 
 // changes musical tracks and deals with fades when silencing.
-// also remembers positions and layers intensity levels.
-// currently prioritises fadeINS.
+// if using 'layer' in music title, will remember time so tracks
+// can remain synced.
 function handleMusic() {
   let musicElement = document.getElementById("play-music");
   let oldMusicName = musicElement.src.split("/").at(-1);
   let newMusicName = value.split("/").at(-1);
 
-  if (newMusicName == "silent") { // reserved keyword.
+  console.log(oldMusicName, newMusicName);
+
+  // fading out to silence.
+  if (newMusicName == "silent") {
+    fadein = false;
     fadeOut(musicElement, timeout=100);
     return;
   }
 
-  fadeIn(musicElement, timeout=200); // fadeIn has priority.
-
-  if (newMusicName != oldMusicName) {
+  else {
     let oldMusicTime = musicElement.currentTime;
     musicElement.src = pathRoot + "/sounds/" + value;
     musicElement.currentTime = 0;
 
-    // check if this is a 'level of intensity' of a group of tracks.
+    // if 'layer', start at same time so they remain synced.
     if (oldMusicName.includes("layer") && newMusicName.includes("layer")) {
       musicElement.currentTime = oldMusicTime;
     }
   }
+  fadein = true;
+  fadeIn(musicElement, timeout=100); // fadein does nothing when already max vol.
   if (index != 0) musicElement.play();
 }
 
-// here 0.01 is the volumeIncrememnt and timeout the maxSteps to fade.
+// here 0.01 is the volumeIncrement and timeout the maxSteps to fade.
 // 5 is milliseconds per step.
 function fadeOut(element, timeout=100) {
-  if (timeout == 0) return;
-  if (element.volume > 0.01) {
+  if (timeout == 0) {
+    if (!fadein) element.volume = 0; 
+    return;
+  }
+    if (element.volume > 0.01) {
     element.volume -= 0.01;
     setTimeout(() =>  { fadeOut(element, timeout-1) }, 5)
   }
   else element.volume = 0;
 }
 
-function fadeIn(element, timeout=200) {
-  if (timeout == 0) return;
+function fadeIn(element, timeout=100) {
+  if (timeout == 0) {
+    if (fadein) element.volume = 1;
+    return;
+  }
   if (element.volume < 0.99) {
     element.volume += 0.01;
     setTimeout(() => { fadeIn(element, timeout-1) }, 5)
@@ -373,6 +392,6 @@ function loadSave() {
   var cookies = document.cookie.split(";");
   const pagenameIndex = cookies.findIndex(e => e.includes("pagename"));
   const nextPagename = cookies[pagenameIndex].split("=")[1];
-  window.location.href = pathRoot.replace(pagename, nextPagename); // remove .html when publishing.
+  window.location.href = pathRoot.replace(pagename, nextPagename) + ".html"; // remove .html when publishing.
   
 }
