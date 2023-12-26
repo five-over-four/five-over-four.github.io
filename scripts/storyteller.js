@@ -382,8 +382,11 @@ function readCookies() {
   }
   else choices = [];
   index = Number(cookies[indexIndex].split("=")[1]);
-  selfRedirect = Number(cookies[redirectIndex].split("=")[1]);
 
+  // sometimes we don't have a self-redirect cookie yet; set to 0.
+  try {
+    selfRedirect = Number(cookies[redirectIndex].split("=")[1]);
+  } catch(err) { selfRedirect = 0; }
 }
 
 function loadSave() {
