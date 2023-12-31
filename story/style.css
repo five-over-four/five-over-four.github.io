@@ -27,7 +27,7 @@ body {
 	text-align: left;
 	margin: auto;
 	line-height: 1.7;
-	font-family: 'Courier New', 'Courier', 'monospace';
+	font-family: 'Courier New', Courier, monospace;
 	font-size: 13pt;
 }
 
@@ -69,7 +69,7 @@ button:active { background-color: rgb(120, 6, 6) !important; }
 button { 
 	font-weight: bold;
 	color: white;
-	font-family: 'Courier New', 'Courier', 'monospace';
+	font-family: 'Courier New', Courier, monospace;
 }
 
 @media (hover: hover) { 
@@ -93,7 +93,7 @@ button {
 }
 
 #last-update {
-	font-family: 'Courier New', 'Courier', 'monospace';
+	font-family: 'Courier New', Courier, monospace;
     color: white;
     font-size: 12pt;
     left: 0;

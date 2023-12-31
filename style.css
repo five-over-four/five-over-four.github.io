@@ -28,7 +28,7 @@ body {
 table {
 	border-collapse: collapse;
 	margin: 0;
-    font-family: 'Courier New', 'Courier', 'monospace';
+    font-family: 'Courier New', Courier, monospace;
 }
 
 th {
@@ -51,7 +51,7 @@ td {
 
 .text {
 	color: white;
-	font-family: 'Courier New', 'Courier', 'monospace';
+	font-family: 'Courier New', Courier, monospace;
 	font-size: 13pt;
 }
 
@@ -62,7 +62,7 @@ td {
 	padding: 10px 20px;
 	text-align: center;
 	font-size: 12pt;
-	font-family: 'Courier New', 'Courier', 'monospace';
+	font-family: 'Courier New', Courier, monospace;
 	margin: 0 2em 0 2em;
 }
 
@@ -91,7 +91,7 @@ td {
 
 .bottom-button-left {
 	background-color: #081c3f;
-	font-family: 'Courier New', 'Courier', 'monospace';
+	font-family: 'Courier New', Courier, monospace;
 	font-size: 14pt;
 	border: none;
 	color: white;
@@ -101,7 +101,7 @@ td {
 
 .bottom-button-right {
 	background-color: #081c3f;
-	font-family: 'Courier New', 'Courier', 'monospace';
+	font-family: 'Courier New', Courier, monospace;
 	font-size: 14pt;
 	border: none;
 	color: white;
@@ -145,7 +145,7 @@ button:active { background-color: rgb(120, 6, 6) !important; }
 }
 
 #update-menu {
-	font-family: 'Courier New', 'Courier', 'monospace';
+	font-family: 'Courier New', Courier, monospace;
 	font-size: 12pt;
 	color: white;
 	position: absolute;
@@ -163,7 +163,7 @@ button:active { background-color: rgb(120, 6, 6) !important; }
 #enable-js {
 	font-size: 30pt;
 	color: white;
-	font-family: 'Courier New', 'Courier', 'monospace';
+	font-family: 'Courier New', Courier, monospace;
 	padding-left: 5pt;
 }
 
