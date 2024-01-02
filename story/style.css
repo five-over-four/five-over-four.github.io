@@ -18,10 +18,11 @@ body {
 }
 
 .contents {
-	max-width: 630px;
-	width: 100%;
+	width: auto;
+	display: inline-block;
 	text-align: center;
 	margin: auto auto 2em auto;
+	padding: 0 3em;
 	background-color: black;
 	border: 2px solid;
 	position: relative;
@@ -29,15 +30,19 @@ body {
 
 .text {
 	color: white;
-	max-width: 85%;
+	width: 0;
+	min-width: 90%;
 	text-align: left;
 	margin: auto;
 	line-height: 1.7;
 	font-size: 13pt;
 }
 
-@media only screen and (max-width: 628px) {
-	.contents { border-style: solid none;} 
+@media only screen and (max-width: 693px) {
+	.contents {
+		padding: 0;
+		border-style: solid none;
+	} 
 }
 
 @font-face {
@@ -124,7 +129,6 @@ button {
 
 p { 
 	display: none;
-	margin: 1em 0;
 }
 
 img {

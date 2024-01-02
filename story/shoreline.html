@@ -43,8 +43,8 @@
     <div id="last-update">Last update: December 9th, 2023</div>
 
     <main class="contents" id="main-container">
+        <div class="align-image-text">
         <img id="main-image" width="483" height="354">
-        <audio loop id="play-music"></audio>
         <div class="text">
 
         <p icon="interior.png" prompt="Step outside." 
@@ -57,10 +57,11 @@
         with you in the middle of it.
         </p>
 
-        <p icon="lighthouse_distance.png" prompt="->">
+        <p icon="lighthouse_distance.png" prompt="Look behind you.">
         A chill breeze welcomes you to the shoreline.
         A lighthouse stands tall in the distance.
         Once a while, the beam sweeps across your face.
+        Your feet sink into the sand as you walk.
         </p>
         
         <p prompt="Wait so, so impatiently. Please.">
@@ -68,14 +69,17 @@
         </p>
 
         </div>
+        </div>
         <button class="styled-button" id="main-button"></button>
     </main>
 
     <button class="styled-button" id="back-button" onclick="window.location.href='/';">
         Front page
     </button>
+
+    <audio loop id="play-music"></audio>
     
-    <script src="/scripts/dynamic_topmargin.js"></script>
+    <script src="/scripts/dynamic_margins.js"></script>
     <script src="/scripts/storyteller.js"></script>
     <script src="/scripts/mobile_swipe.js"></script>
     <script src="/scripts/notification_popups.js"></script>

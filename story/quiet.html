@@ -48,7 +48,6 @@
 
     <main class="contents" id="main-container">
         <img id="main-image" width="483" height="354">
-        <audio loop id="play-music"></audio>
         <div class="text">
 
         <p prompt="Begin." icon="open.png" 
@@ -327,7 +326,7 @@
         </p>
 
         <p music="silent" background="bg_tile_symmetry.png"
-        color="#0C255A" effect="inside_outside.mp3" icon="closed.png"
+        color="#0C255A" effect="inside_outside.mp3" icon="bug.png"
         styles="body=animation: next-room-bg 15s ease-in-out infinite"
         prompt="Look.">
         The world shakes apart with a massive sound and a feeling like
@@ -346,7 +345,9 @@
         Front page
     </button>
 
-    <script src="/scripts/dynamic_topmargin.js"></script>
+    <audio loop id="play-music"></audio>
+
+    <script src="/scripts/dynamic_margins.js"></script>
     <script src="/scripts/storyteller.js"></script>
     <script src="/scripts/mobile_swipe.js"></script>
     <script src="/scripts/notification_popups.js"></script>
