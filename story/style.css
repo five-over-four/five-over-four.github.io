@@ -13,10 +13,6 @@ body {
 	flex-direction: column;
 }
 
-* {
-	font-family: 'Courier New', Courier, 'Courier Prime', monospace;
-}
-
 .contents {
 	width: auto;
 	display: inline-block;
@@ -29,13 +25,15 @@ body {
 }
 
 .text {
+	font-family: 'Lora Web';
 	color: white;
 	width: 0;
 	min-width: 90%;
 	text-align: left;
 	margin: auto;
-	line-height: 1.7;
+	line-height: 2;
 	font-size: 13pt;
+	letter-spacing: 0.5pt;
 }
 
 @media only screen and (max-width: 693px) {
@@ -46,25 +44,25 @@ body {
 }
 
 @font-face {
-	font-family: super-retro;
-	src: url(/fonts/Web437_ATT_PC6300.woff);
-}
-
-@font-face {
 	font-family: 'Courier Prime';
-	src: url(/fonts/Courier_Prime/CourierPrime-Regular.ttf);
-}
-
-@font-face {
-	font-family: 'Courier Prime';
-	src: url(/fonts/Courier_Prime/CourierPrime-Bold.ttf);
+	src: url(/fonts/Courier_Prime/CourierPrime-Regular.woff2) format('woff2'),
+		url(/fonts/Courier_Prime/CourierPrime-Regular.woff) format('woff');
 	font-weight: bold;
+	font-style: normal;
 }
 
 @font-face {
-	font-family: 'Courier Prime';
-	src: url(/fonts/Courier_Prime/CourierPrime-Italic.ttf);
-	font-style: italic;
+    font-family: 'Lora Web';
+    src: url('/fonts/Lora/lora_variable.woff2') format('woff2'),
+         url('/fonts/Lora/lora_variable.woff') format('woff');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lora Web';
+    src: url('/fonts/Lora/lora_italic_variable.woff2') format('woff2'),
+         url('/fonts/Lora/lora_italic_variable.woff') format('woff');
+    font-style: italic;
 }
 
 #popup {
@@ -94,6 +92,7 @@ body {
 
 button:active { background-color: rgb(120, 6, 6) !important; }
 button { 
+	font-family: 'Courier New', Courier, 'Courier Prime', monospace;
 	font-weight: bold;
 	color: white;
 }
@@ -146,4 +145,9 @@ a:visited, a:active, a:link {
 
 a:hover {
 	color: #FF0000;
+}
+
+@font-face {
+	font-family: super-retro;
+	src: url(/fonts/Web437_ATT_PC6300.woff);
 }
