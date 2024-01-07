@@ -118,6 +118,7 @@ button {
 }
 
 #last-update {
+	font-family: 'Courier New', Courier, 'Courier Prime', monospace;
     color: white;
     font-size: 12pt;
     left: 0;
