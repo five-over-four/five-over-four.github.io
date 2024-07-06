@@ -184,7 +184,7 @@ function updateValues(atIndex, whichAttributes=null) {
         parseNewStyles(value);
         break;
       case "link":
-        window.location.href = pathRoot.replace(pagename, value); // remove .html when publishing.
+        window.location.href = "/";
     }
   }
 }
