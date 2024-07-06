@@ -12,30 +12,12 @@ button.addEventListener('click', goForward('branch1'), false);
 
 // generate save and load buttons for mobile users (and desktop).
 container = "main-container";
-makeButton("Save", "save-button", container, createCookies, "cookie-button");
-makeButton("Load", "load-button", container, loadSave, "cookie-button");
 
-// initialise index, choices, indicesVisited.
-if (cookiesExist) {
-  readCookies(); // load your saved state.
-  if (selfRedirect == 0) { // start at beginning if not loading with 'L'.
-    var index = 0;
-    var choices = [];
-    var indicesVisited = [0];
-  }
-  else { // we're loading a save.
-    indicesVisited = simulateExactPath(index);
-    getMostRecentItems()
-  } 
-}
-else {
-  var index = 0;
-  var choices = []; // push(1) for branch1, push(2) for branch2.
-  var indicesVisited = [0];
-}
+var index = 0;
+var choices = []; // push(1) for branch1, push(2) for branch2.
+var indicesVisited = [0];
 
 selfRedirect = 0;
-document.cookie = "self-redirect=0;sameSite=Strict;Path=/";
 paras[index].style.display = 'block';
 updateValues(index); // get initial setup (color and button prompt etc.)
 
@@ -339,64 +321,8 @@ function controlHandler(e) {
           console.log("no choice presented!");
       }
       break;
-    case "s":
-      createCookies();
-      break;
-    case "l":
-      loadSave();
-      break;
     case "d": // debug key.
       console.log(`Steps taken: ${indicesVisited.length}`);
       break;
   }
-}
-
-/**
- * SAVING / LOADING SECTION: Deals with the creation and reading of cookies.
- * The cookies are *only* used to save your progress on a given page.
- */
-
-// the self-redirect cookie is read at page load to see "oh, we're arriving from elsewhere".
-function createCookies() {
-  const choicesSaved = choices.join(","); // not defined at start of page somehow.
-  const properties = ";sameSite=Strict;Max-Age=34560000;Path=/";
-  document.cookie = "choices=" + choicesSaved + properties;
-  document.cookie = "index=" + index + properties;
-  document.cookie = "pagename=" + window.location.pathname.split('.')[0].split("/").at(-1) + properties;
-  document.cookie = "self-redirect=0" + properties;
-  cookiesExist = true;
-}
-
-// updates index, choices.
-function readCookies() {
-
-  var cookies = document.cookie.split(";");
-
-  const indexIndex = cookies.findIndex(e => e.includes("index"));
-  const choiceArray = cookies.findIndex(e => e.includes("choices"));
-  const redirectIndex = cookies.findIndex(e => e.includes("self-redirect"));
-
-  // in case no choices are made yet.
-  if (cookies[choiceArray].split("=")[1].length > 0) {
-      choices = cookies[choiceArray].split("=")[1].split(",").map(item => Number(item));
-  }
-  else choices = [];
-  index = Number(cookies[indexIndex].split("=")[1]);
-
-  // sometimes we don't have a self-redirect cookie yet; set to 0.
-  try {
-    selfRedirect = Number(cookies[redirectIndex].split("=")[1]);
-  } catch(err) { selfRedirect = 0; }
-}
-
-function loadSave() {
-
-  if (!cookiesExist) return;
-
-  document.cookie = "self-redirect=1;sameSite=Strict;Max-Age=34560000;Path=/";
-  var cookies = document.cookie.split(";");
-  const pagenameIndex = cookies.findIndex(e => e.includes("pagename"));
-  const nextPagename = cookies[pagenameIndex].split("=")[1];
-  window.location.href = pathRoot.replace(pagename, nextPagename); // remove .html when publishing.
-  
 }
